@@ -41,17 +41,7 @@ class MyArrayListTest {
     @Test
     void removeByIndex() throws Exception
     {
-        /*
-        actual.add("aaa");
-        actual.add("bbb");
-        expected.add("aaa");
-        expected.add("bbb");
-        actual.removeByIndex(actual.size());
-        expected.remove(expected.size());
-     // assertEquals(actual.get(1),);
-     // assertEquals(expected,actual);
-       assertEquals(expected.get(expected.size()),actual.get(expected.size()));
-*/
+        
     }
 
     @Test
