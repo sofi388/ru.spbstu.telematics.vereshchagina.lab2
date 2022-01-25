@@ -41,9 +41,26 @@ class MyArrayListTest {
     @Test
     void removeByIndex() throws Exception
     {
-        
+       actual.add("aaa");
+       actual.add("bbb");
+       expected.add("aaa");
+       expected.add("bbb");
+        actual.removeByIndex(1);
+        expected.remove(1);
+        int size_expexted = expected.size();
+        int size_actual = actual.size();
+        assertEquals(size_expexted, size_actual);   
     }
 
+     @Test
+    void TestIterator() throws Exception
+    {
+        Iterator<String> expectedIterator = expected.iterator();
+        Iterator<String> actualIterator = actual.iterator();
+
+        assertEquals( actualIterator.hasNext(), expectedIterator.hasNext());
+    }
+    
     @Test
     void out()
     {
