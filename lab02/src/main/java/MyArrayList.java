@@ -1,4 +1,4 @@
-public class MyArrayList<T> {
+public class MyArrayList<T> implements Iterable<T>{
     private final int SIZE = 16;
     private final int CUTRATE = 4;
     private Object[] array = new Object[SIZE];
@@ -46,5 +46,27 @@ public class MyArrayList<T> {
 
         }
     }
+    
+    public Iterator<T> iterator() {
+        Iterator<T> it = new Iterator<T>() {
+
+            private int currentIndex = 0;
+
+            public boolean hasNext() {
+                return currentIndex < pointer && array[currentIndex] != null;
+            }
+
+            public T next() {
+                return (T)array[currentIndex++];
+            }
+
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+        return it;
+    }
+
+    
 }
 
