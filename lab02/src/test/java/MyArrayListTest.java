@@ -1,11 +1,10 @@
-import org.junit.jupiter.api.Test;
-
+import org.junit.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 
-class MyArrayListTest {
+public class MyArrayListTest {
     ArrayList<String> expected = new ArrayList<>();
     MyArrayList<String> actual = new MyArrayList<>();
     @Test
@@ -13,21 +12,21 @@ class MyArrayListTest {
     {
         actual.add("aaa");
         expected.add("aaa");
-        assertEquals(expected.get(0), actual.get(0));
+        Assert.assertEquals(expected.get(0), actual.get(0));
     }
 
     @Test
-    void get() throws Exception
+    public void get() throws Exception
     {
         actual.add("aaa");
         expected.add("aaa");
         String str_expexted = expected.get(0);
         String str_actual = actual.get(0);
-        assertEquals(str_expexted, str_actual);
+        Assert.assertEquals(str_expexted, str_actual);
     }
 
     @Test
-    void size() throws Exception
+   public void size() throws Exception
     {
         actual.add("aaa");
         actual.add("bbb");
@@ -35,11 +34,11 @@ class MyArrayListTest {
         expected.add("bbb");
         int size_expexted = expected.size();
         int size_actual = actual.size();
-        assertEquals(size_expexted, size_actual);
+        Assert.assertEquals(size_expexted, size_actual);
     }
 
     @Test
-    void removeByIndex() throws Exception
+   public void removeByIndex() throws Exception
     {
        actual.add("aaa");
        actual.add("bbb");
@@ -49,20 +48,23 @@ class MyArrayListTest {
         expected.remove(1);
         int size_expexted = expected.size();
         int size_actual = actual.size();
-        assertEquals(size_expexted, size_actual);   
+        Assert.assertEquals(size_expexted, size_actual);
     }
 
-     @Test
-    void TestIterator() throws Exception
+    @Test
+    public void TestIterator() throws Exception
     {
         Iterator<String> expectedIterator = expected.iterator();
         Iterator<String> actualIterator = actual.iterator();
 
-        assertEquals( actualIterator.hasNext(), expectedIterator.hasNext());
+        Assert.assertEquals( actualIterator.hasNext(), expectedIterator.hasNext());
+
+        while (actualIterator.hasNext() && expectedIterator.hasNext())
+            Assert.assertEquals(actualIterator.next(), expectedIterator.next());
     }
-    
+
     @Test
-    void out()
+    public void out()
     {
 
     }
