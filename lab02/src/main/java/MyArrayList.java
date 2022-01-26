@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class MyArrayList<T> implements Iterable<T>{
     private final int SIZE = 16;
     private final int CUTRATE = 4;
